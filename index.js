@@ -4,6 +4,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
+const favicon = require("serve-favicon");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -13,6 +14,7 @@ app.use(morgan("tiny"));
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(favicon("favicon.ico"));
 
 // routes
 app.get("/", async (req, res) => {
