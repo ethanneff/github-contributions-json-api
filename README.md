@@ -1,6 +1,6 @@
 # Github Contributions JSON API
 
-A simple serverless API to get the Github Contributions for a particular user
+A serverless API to get a user's Github contributions
 
 ### Endpoint
 
