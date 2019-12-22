@@ -24,9 +24,11 @@ app.get("/", async (req, res) => {
   const activity = {};
   const username = req.query.id || req.query.username;
   if (!username) {
-    return res
-      .status(400)
-      .json({ error: "missing github username", example: "https://github-contributions-json-api.herokuapp.com/?username=gaearon" });
+    return res.status(400).json({
+      error: "missing github username",
+      example:
+        "https://github-contributions-json-api.herokuapp.com/?username=gaearon"
+    });
   }
   const url = `https://github.com/${username}`;
   const github = await axios.get(url);
