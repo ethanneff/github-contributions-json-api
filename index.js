@@ -1,3 +1,4 @@
+// libraries
 const express = require("express");
 const helmet = require("helmet");
 const axios = require("axios");
@@ -6,6 +7,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const favicon = require("serve-favicon");
 
+// server
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -39,5 +41,5 @@ app.get("/", async (req, res) => {
   return res.json(activity);
 });
 
-// server
+// deploy
 app.listen(port);
