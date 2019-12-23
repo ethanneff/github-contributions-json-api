@@ -35,10 +35,13 @@ app.get("/", async (req, res) => {
   const $ = cheerio.load(github.data);
   $(".day").each((_, element) => {
     const item = $(element);
-    const date = item.attr("data-date") || "";
-    const unix = new Date(date).valueOf();
+    const date = item.attr("data-date");
     const count = Number(item.attr("data-count"));
-    activity[unix] = count;
+    if (date in activity) {
+      activity[date] += count;
+    } else {
+      activity[date] = count;
+    }
   });
   return res.json(activity);
 });
