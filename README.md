@@ -384,3 +384,7 @@ curl https://github-contributions-json-api.herokuapp.com/?username=gaearon
   "2019-12-23": 0
 }
 ```
+
+### Deploy
+
+Automatically handled by Heroku when merging to master on Git
